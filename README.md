@@ -16,18 +16,26 @@ End the program.
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int main() {
 
- srand(time(0));
- int n;
- printf("Enter the number of random numbers to generate: ");
- scanf("%d", &n);
- printf("Generated random numbers:\n");
- for (int i = 0; i < n; i++) {
- int random_number = rand();
- printf("%d\n", random_number);
- }
- return 0;
+int main() 
+{
+    int count, min, max;
+    printf("Enter the number of random numbers to generate: ");
+    scanf("%d", &count);
+    printf("Enter the minimum value: ");
+    
+    scanf("%d", &min);
+    printf("Enter the maximum value: ");
+    scanf("%d", &max);
+    srand(time(NULL));
+    printf("Pseudorandom numbers:\n");   
+    for (int i = 0; i < count; i++) 
+    {
+        int random_number = (rand() % (max - min + 1)) + min;
+        printf("%d\n", random_number);
+    }
+    return 0;
+}
 }
 ```
 
